@@ -22,6 +22,7 @@
 </template>
 
 <script>
+  import {login} from '@/service/system';
   export default {
     data() {
       return {
@@ -35,6 +36,8 @@
     methods: {
       login(user){
         console.log(this.user.username);
+        const result = login({});
+
       },
       register(user){
         console.log(this.user.password);
