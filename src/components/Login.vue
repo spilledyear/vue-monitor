@@ -32,9 +32,10 @@
       }
     },
     methods: {
-      loginClick(user) {
+      async loginClick(user) {
         this.loading = true;
-        const result = service.login({username: this.loginForm.username, password: this.loginForm.password});
+        const result = await service.login({username: this.loginForm.username, password: this.loginForm.password});
+        this.loading = false;
         console.log(result);
       },
     }
