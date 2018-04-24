@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import {getAdminInfo} from '@/api/getData'
+import {login} from '@/service/system'
 
 Vue.use(Vuex)
 
@@ -8,6 +8,9 @@ const state = {
 	adminInfo: {
 		avatar: 'default.jpg'
 	},
+	user: {
+		name: window.localStorage.getItem('user' || '[]') == null ? '未登录' : JSON.parse(window.localStorage.getItem('user' || '[]')).name,
+	}
 }
 
 const mutations = {
@@ -19,7 +22,7 @@ const mutations = {
 const actions = {
 	async getAdminData({commit}){
 		try{
-			const res = await getAdminInfo()
+			const res = await login({})
 			if (res.status == 1) {
 				commit('saveAdminInfo', res.data);
 			}else{
