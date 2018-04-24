@@ -17,6 +17,7 @@
 <script>
   import * as service from '@/service/system';
   export default {
+    name: 'Login',
     data() {
       return {
         rules: {
@@ -36,7 +37,13 @@
         this.loading = true;
         const result = await service.login({username: this.loginForm.username, password: this.loginForm.password});
         this.loading = false;
-        console.log(result);
+ 
+        var path = this.$route.query.redirect;
+        if(result.success){
+          this.$router.replace({path: path == '/' || path == undefined ? '/home' : path});
+        }else{
+          this.$router.replace({path: 'login'});
+        }
       },
     }
   }
