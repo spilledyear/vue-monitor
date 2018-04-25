@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'Index',
+  name: 'login',
   data () {
     return {
       message: 'Hello，主页'
