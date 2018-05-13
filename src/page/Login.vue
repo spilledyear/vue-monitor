@@ -15,7 +15,7 @@
 </template>
 
 <script>
-  import * as service from '@/service/system';
+  import { login } from '@/api/fetch';
   export default {
     name: 'Login',
     data() {
@@ -35,14 +35,14 @@
     methods: {
       async loginClick(user) {
         this.loading = true;
-        const result = await service.login({username: this.loginForm.username, password: this.loginForm.password});
+        const result = await login({username: this.loginForm.username, password: this.loginForm.password});
         this.loading = false;
  
         // var path = this.$route.query.redirect;
 
         if(result.success){
           // this.$router.replace({path: path == '/' || path == undefined ? '/home' : path});
-          this.$router.push({ path: 'manage' });
+          this.$router.push({ path: '/' });
         }else{
           this.$router.replace({path: 'login'});
         }
