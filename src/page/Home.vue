@@ -29,12 +29,12 @@
 		name: 'Home',
     	data(){
     		return {
-    			userCount: null,
-    			orderCount: null,
-                adminCount: null,
-                allUserCount: null,
-                allOrderCount: null,
-                allAdminCount: null,
+    			userCount: 0,
+    			orderCount: 0,
+                adminCount: 0,
+                allUserCount: 0,
+                allOrderCount: 0,
+                allAdminCount: 0,
     			sevenDay: [],
     			sevenDate: [[],[],[]],
     		}
