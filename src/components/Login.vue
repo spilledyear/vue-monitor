@@ -17,7 +17,7 @@
 <script>
   import * as service from '@/service/system';
   export default {
-    name: 'login',
+    name: 'Login',
     data() {
       return {
         rules: {

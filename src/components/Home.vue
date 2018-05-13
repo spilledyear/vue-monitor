@@ -1,13 +1,13 @@
 <template>
   <div class="hello">
-    <router-link to='Login'>登录界面看看</router-link>
+    <router-link to='login'>登录界面看看</router-link>
     {{message}}
   </div>
 </template>
 
 <script>
 export default {
-  name: 'login',
+  name: 'Home',
   data () {
     return {
       message: 'Hello，主页'
