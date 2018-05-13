@@ -22,8 +22,8 @@
 
 <script>
 	import dtime from 'time-formater'
-	import headTop from '../components/headTop'
-	import tendency from '../components/tendency' 
+	import headTop from '../components/HeadTop'
+	import tendency from '../components/Tendency' 
 	import {userCount, orderCount, getUserCount, getOrderCount, adminDayCount, adminCount} from '@/api/getData'
     export default {
 		name: 'Home',
