@@ -10,7 +10,11 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "echarts": "^4.1.0",
     "element-ui": "^2.3.5",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "time-formater": "^1.0.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"

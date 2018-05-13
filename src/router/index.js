@@ -1,26 +1,28 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/Home'
-import Login from '@/components/Login'
 
 Vue.use(Router)
 
+const Login = r => require.ensure([], () => r(require('@/page/Login')), 'Login');
+const Manage = r => require.ensure([], () => r(require('@/page/Manage')), 'Manage');
+const Home = r => require.ensure([], () => r(require('@/page/Home')), 'Home');
+
+
+
 export default new Router({
-  routes: [
-    {
+  routes: [{
       path: '/',
-      name: 'Home',
-      component: Home
-    },
-    {
-      path: '/home',
-      name: 'Home',
-      component: Home
+      name: 'Manage',
+      component: Manage,
+      children: [{
+        path: '',
+        component: Home,
+        meta: [],
+      }]
     },
     {
       path: '/login',
-      name: 'Login',
       component: Login
-    }
+    },
   ]
 })

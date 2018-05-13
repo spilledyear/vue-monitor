@@ -11,20 +11,20 @@ Vue.config.productionTip = false;
 
 Vue.use(ElementUI);
 
-router.beforeEach((to, from, next)=> {
-  if (to.name == 'login') {
-    next();
-    return;
-  }
-  var name = store.state.user.name;
-  if (!name || name == '未登录') {
-    if (to.meta.requireAuth || to.name == null) {
-      next({path: '/', query: {redirect: to.path}})
-    } else {
-      next();
-    }
-  } 
-});
+// router.beforeEach((to, from, next)=> {
+//   if (to.name == 'login') {
+//     next();
+//     return;
+//   }
+//   var name = store.state.user.name;
+//   if (!name || name == '未登录') {
+//     if (to.meta.requireAuth || to.name == null) {
+//       next({path: '/', query: {redirect: to.path}})
+//     } else {
+//       next();
+//     }
+//   } 
+// });
 
 /* eslint-disable no-new */
 new Vue({

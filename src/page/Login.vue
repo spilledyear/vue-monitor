@@ -38,9 +38,11 @@
         const result = await service.login({username: this.loginForm.username, password: this.loginForm.password});
         this.loading = false;
  
-        var path = this.$route.query.redirect;
+        // var path = this.$route.query.redirect;
+
         if(result.success){
-          this.$router.replace({path: path == '/' || path == undefined ? '/home' : path});
+          // this.$router.replace({path: path == '/' || path == undefined ? '/home' : path});
+          this.$router.push({ path: 'manage' });
         }else{
           this.$router.replace({path: 'login'});
         }
