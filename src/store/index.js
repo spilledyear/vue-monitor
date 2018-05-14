@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import {login} from '@/service/system'
+import {login} from '@/api/fetch'
 
 Vue.use(Vuex)
 

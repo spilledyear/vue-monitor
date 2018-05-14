@@ -41,6 +41,7 @@
         // var path = this.$route.query.redirect;
 
         if(result.success){
+          localStorage.setItem('TOKEN_KEY', result.token);
           // this.$router.replace({path: path == '/' || path == undefined ? '/home' : path});
           this.$router.push({ path: '/' });
         }else{
