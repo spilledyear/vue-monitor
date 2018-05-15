@@ -13,7 +13,6 @@ const service = axios.create({
 
 // 请求 拦截器，在请求之前执行一些逻辑
 service.interceptors.request.use(request => {
-  console.log(request);
   if (store.getters.token) {
     // 让每个请求携带{TOKEN_KEY: xxx} TOKEN_KEY为自定义key，在 @/utils/auth 中定义， 请根据实际情况自行修改
     request.headers[TOKEN_KEY] = getToken();

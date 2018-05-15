@@ -18,8 +18,7 @@
 </template>
 
 <script>
-  import headTop from '../components/HeadTop'
-  import { getUserList } from '@/api/fetch'
+  import headTop from '../components/HeadTop';
   export default {
     data() {
       return {
@@ -40,7 +39,7 @@
           username: '王小虎',
           city: '上海市普陀区金沙江路 1516 弄'
         }],
-        currentRow: null,
+        currentRow: 0,
         offset: 0,
         limit: 20,
         count: 0,
@@ -54,12 +53,13 @@
       this.initData();
     },
     methods: {
-      async initData() {
-        try {
-          this.getUsers();
-        } catch (err) {
-          console.log('获取数据失败', err);
-        }
+      initData() {
+        this.$store.dispatch('getUserList', {}).then((data) => {
+          console.log(data);
+        }).catch((error) => {
+            console.log('获取数据失败', error);
+            this.loading = false
+        });
       },
       handleSizeChange(val) {
         console.log(`每页 ${val} 条`);
@@ -69,20 +69,6 @@
         this.offset = (val - 1) * this.limit;
         this.getUsers()
       },
-      async getUsers() {
-        const Users = await getUserList({
-          offset: this.offset,
-          limit: this.limit
-        });
-        this.tableData = [];
-        Users.forEach(item => {
-          const tableData = {};
-          tableData.username = item.username;
-          tableData.registe_time = item.registe_time;
-          tableData.city = item.city;
-          this.tableData.push(tableData);
-        })
-      }
     },
   }
 
