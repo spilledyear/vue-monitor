@@ -21,17 +21,13 @@ export default async (url = '', data = {}, type = 'GET', method = 'fetch') => {
   }
 
   if (window.fetch && method == 'fetch') {
-    let headers = {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-    };
-    if(localStorage.TOKEN_KEY){
-      headers.Authorization = "Bearer " + localStorage.TOKEN_KEY;
-    }
     let request = {
       credentials: 'include',
       method: type,
-      headers:headers,
+      headers:{
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
       mode: "cors",
       cache: "force-cache"
     }
