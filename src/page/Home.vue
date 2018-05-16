@@ -45,12 +45,10 @@
       tendency,
     },
     mounted() {
-      this.initData();
       for (let i = 6; i > -1; i--) {
         const date = dtime(new Date().getTime() - 86400000 * i).format('YYYY-MM-DD')
         this.sevenDay.push(date)
       }
-      this.getSevenData();
     },
     computed: {},
     methods: {}

@@ -1,7 +1,7 @@
 <template>
   <div class="header_container">
     <el-breadcrumb separator="/">
-      <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
+      <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
       <el-breadcrumb-item v-for="(item, index) in $route.meta" :key="index">{{item}}</el-breadcrumb-item>
     </el-breadcrumb>
     <el-dropdown @command="handleCommand" menu-align='start'>
@@ -15,10 +15,11 @@
 </template>
 
 <script>
+  import logoSrc from '../assets/image/avator.jpg'
   export default {
     data() {
       return {
-        baseImgPath: 'look'
+        baseImgPath: logoSrc
       }
     },
     created() {
@@ -28,7 +29,6 @@
     methods: {
     }
   }
-
 </script>
 
 <style lang="less">

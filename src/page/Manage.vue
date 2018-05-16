@@ -1,13 +1,12 @@
 <template>
   <div class="manage_page fillcontain">
     <el-row style="height: 100%;">
-      <el-col :span="4" style="min-height: 100%; background-color: #324057;">
+      <el-col :span="3" style="min-height: 100%; background-color: #324057;">
         <el-menu router :default-active="defaultActive" style="min-height: 1000px;"  background-color="#324057" text-color="#B4B5C4" active-text-color="#4485F6">
-          <el-menu-item index="/">
-            <i class="el-icon-menu"></i>首页</el-menu-item>
           <el-submenu index="2">
             <template slot="title">
-              <i class="el-icon-document"></i>数据管理</template>
+              <i class="el-icon-document"></i>数据管理
+            </template>
             <el-menu-item index="userList">用户列表</el-menu-item>
             <el-menu-item index="shopList">商家列表</el-menu-item>
             <el-menu-item index="foodList">食品列表</el-menu-item>
@@ -16,7 +15,8 @@
           </el-submenu>
           <el-submenu index="3">
             <template slot="title">
-              <i class="el-icon-plus"></i>添加数据</template>
+              <i class="el-icon-plus"></i>添加数据
+            </template>
             <el-menu-item index="addShop">添加商铺</el-menu-item>
             <el-menu-item index="addGoods">添加商品</el-menu-item>
           </el-submenu>
@@ -46,7 +46,7 @@
         </el-menu>
       </el-col>
 
-      <el-col :span="20" style="height: 100%;overflow: auto;">
+      <el-col :span="21" style="height: 100%;overflow: auto;">
         <keep-alive>
           <router-view></router-view>
         </keep-alive>
