@@ -23,7 +23,7 @@
       return {
         loginForm: {
           username: 'admin',
-          password: '123'
+          password: 'admin'
         },
         loginRules: {
           username: [{ required: true, trigger: 'blur', message: '请输入用户名',}],
