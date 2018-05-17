@@ -1,6 +1,6 @@
 <template>
   <div class="fillcontain">
-    <head-top></head-top>
+    <Header></Header>
     <div class="table_container">
       <el-table :data="tableData" highlight-current-row style="width: 100%">
         <el-table-column type="index" label="标题" style="width: 20%"/>
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-  import headTop from '../components/HeadTop';
+  import Header from '../components/Header';
   export default {
     data() {
       return {
@@ -47,7 +47,7 @@
       }
     },
     components: {
-      headTop,
+      Header,
     },
     created() {
       this.initData();

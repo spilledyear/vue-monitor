@@ -19,8 +19,6 @@ service.interceptors.request.use(request => {
   }
   return request
 }, error => {
-  // Do something with request error
-  console.log(error)
   Promise.reject(error)
 });
 

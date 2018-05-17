@@ -1,5 +1,5 @@
 import axios from '@/utils/axios'
-import { getToken, TOKEN_KEY } from '@/utils/auth'
+
 
 /**
  * 登录接口
@@ -17,16 +17,6 @@ export function logout() {
   return request({
     url: '/login/logout',
     method: 'post'
-  })
-}
-
-export function getUserInfo(token) {
-  return request({
-    url: '/user/info',
-    method: 'get',
-    params: {
-      token
-    }
   })
 }
 

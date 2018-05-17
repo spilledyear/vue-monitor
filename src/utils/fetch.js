@@ -27,10 +27,13 @@ export default async (url = '', data = {}, type = 'GET', method = 'fetch') => {
       headers:{
         'Accept': 'application/json',
         'Content-Type': 'application/json',
+        'Authorization': localStorage.Authorization
       },
       mode: "cors",
       cache: "force-cache"
     }
+
+    console.log(request);
 
     if (type == 'POST') {
       Object.defineProperty(request, 'body', {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <head-top></head-top>
+    <Header></Header>
     <section class="data_section">
       <header class="section_title">数据统计</header>
       <el-row :gutter="24">
@@ -30,7 +30,7 @@
 
 <script>
   import dtime from 'time-formater'
-  import headTop from '../components/HeadTop'
+  import Header from '../components/Header'
   import tendency from '../components/Tendency'
   export default {
     name: 'Home',
@@ -41,7 +41,7 @@
       }
     },
     components: {
-      headTop,
+      Header,
       tendency,
     },
     mounted() {
