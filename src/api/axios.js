@@ -2,7 +2,7 @@ import axios from '@/utils/axios'
 
 
 /**
- * 登录接口
+ * 登录
  * @param {*} data 
  */
 export function login(data) {
@@ -13,9 +13,13 @@ export function login(data) {
   })
 }
 
+/**
+ * 退出登录
+ * @param {*} data 
+ */
 export function logout() {
   return request({
-    url: '/login/logout',
+    url: '/api/sys/logout',
     method: 'post'
   })
 }
@@ -26,11 +30,11 @@ export function logout() {
  * @param {*} data 
  */
 
-export function getUserList(data){
+export function getUserList(data) {
   return axios({
-    url: '/api/user/query',
+    url: '/api/user/',
     method: 'post',
-    data:{}
+    data
   });
 }
 

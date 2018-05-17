@@ -3,10 +3,11 @@
     <Header></Header>
     <div class="table_container">
       <el-table :data="tableData" highlight-current-row style="width: 100%">
-        <el-table-column type="index" label="标题" style="width: 20%"/>
-        <el-table-column property="registe_time" label="注册日期" style="width: 20%" />
-        <el-table-column property="username" label="用户姓名" style="width: 20%"/>
-        <el-table-column property="city" label="注册地址" style="width: 20%"/>
+        <el-table-column type="index" label="标题"/>
+        <el-table-column property="username" label="用户姓名" style="width: 30%"/>
+        <el-table-column property="phone" label="联系方式" style="width: 30%"/>
+        <el-table-column property="birthDate" label="出生日期" style="width: 30%" />
+        <el-table-column property="age" label="年龄" style="width: 10%" />
       </el-table>
       <div class="Pagination" style="text-align: left;margin-top: 10px;">
         <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="currentPage" :page-size="20"
@@ -23,21 +24,21 @@
     data() {
       return {
         tableData: [{
-          registe_time: '2016-05-02',
+          birthDate: '2016-05-02',
           username: '王小虎',
-          city: '上海市普陀区金沙江路 1518 弄'
+          phone: '上海市普陀区金沙江路 1518 弄'
         }, {
           registe_time: '2016-05-04',
           username: '王小虎',
-          city: '上海市普陀区金沙江路 1517 弄'
+          phone: '上海市普陀区金沙江路 1517 弄'
         }, {
-          registe_time: '2016-05-01',
+          birthDate: '2016-05-01',
           username: '王小虎',
-          city: '上海市普陀区金沙江路 1519 弄'
+          phone: '上海市普陀区金沙江路 1519 弄'
         }, {
-          registe_time: '2016-05-03',
+          birthDate: '2016-05-03',
           username: '王小虎',
-          city: '上海市普陀区金沙江路 1516 弄'
+          phone: '上海市普陀区金沙江路 1516 弄'
         }],
         currentRow: 0,
         offset: 0,
@@ -55,7 +56,8 @@
     methods: {
       initData() {
         this.$store.dispatch('getUserList', {}).then((data) => {
-          console.log(data);
+          this.tableData = data.rows;
+          this.count = data.rows.length;
         }).catch((error) => {
             console.log('获取数据失败', error);
             this.loading = false
