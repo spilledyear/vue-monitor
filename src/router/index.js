@@ -22,7 +22,7 @@ export default new Router({
       }, {
         path: 'userList',
         component: UserList,
-        meta: [],
+        meta: ['数据管理', '用户列表'],
       }]
     },
 
