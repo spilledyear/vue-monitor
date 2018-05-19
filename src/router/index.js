@@ -9,6 +9,7 @@ const Home = r => require.ensure([], () => r(require('@/page/Home')), 'Home');
 const UserList = r => require.ensure([], () => r(require('@/page/UserList')), 'UserList');
 const Role = r => require.ensure([], () => r(require('@/page/Role')), 'Role');
 const Task = r => require.ensure([], () => r(require('@/page/Task')), 'Task');
+const JobRunningInfo = r => require.ensure([], () => r(require('@/page/JobRunningInfo')), 'JobRunningInfo');
 
 
 
@@ -38,8 +39,8 @@ export default new Router({
         component: Task,
         meta: ['计划任务', '任务明细'],
       }, {
-        path: 'taskHistory',
-        component: Task,
+        path: 'jobHistory',
+        component: JobRunningInfo,
         meta: ['计划任务', '执行记录'],
       }, {
         path: 'setting',

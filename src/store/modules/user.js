@@ -78,29 +78,6 @@ const user = {
         })
       })
     },
-
-    // 获取Job信息
-    getJobList({ commit }, params) {
-      return new Promise((resolve, reject) => {
-        getJobList(params).then(data => {
-          resolve(data)
-        }).catch(error => {
-          reject(error)
-        })
-      })
-    },
-    
-    addJob({ commit }, data){
-      console.log(data)
-      return new Promise((resolve, reject) => {
-        addJob(data).then(data => {
-          resolve(data)
-        }).catch(error => {
-          console.log(error)
-          reject(error)
-        })
-      })
-    }
   }
 }
 

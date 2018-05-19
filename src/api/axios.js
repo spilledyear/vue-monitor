@@ -75,3 +75,15 @@ export function getJobList(data) {
   });
 }
 
+/**
+ * 获取Job执行记录
+ * @param {*} data 
+ */
+export function getJobRunningInfo(data) {
+  return axios({
+    url: '/api/job/jobinfo/query',
+    method: 'post',
+    data
+  });
+}
+

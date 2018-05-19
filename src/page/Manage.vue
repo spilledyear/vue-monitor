@@ -21,7 +21,7 @@
               <i class="el-icon-edit"></i>计划任务
             </template>
             <el-menu-item index="task">任务明细</el-menu-item>
-            <el-menu-item index="taskHistory">执行记录</el-menu-item>
+            <el-menu-item index="jobHistory">执行记录</el-menu-item>
           </el-submenu>
           <el-submenu index="6">
             <template slot="title">
