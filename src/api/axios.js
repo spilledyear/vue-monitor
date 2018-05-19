@@ -79,9 +79,9 @@ export function getJobList(data) {
  * 获取Job执行记录
  * @param {*} data 
  */
-export function getJobRunningInfo(data) {
+export function getJobRecord(data) {
   return axios({
-    url: '/api/job/jobinfo/query',
+    url: '/api/job/record/query',
     method: 'post',
     data
   });

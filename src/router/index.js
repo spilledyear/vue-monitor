@@ -8,8 +8,8 @@ const Manage = r => require.ensure([], () => r(require('@/page/Manage')), 'Manag
 const Home = r => require.ensure([], () => r(require('@/page/Home')), 'Home');
 const UserList = r => require.ensure([], () => r(require('@/page/UserList')), 'UserList');
 const Role = r => require.ensure([], () => r(require('@/page/Role')), 'Role');
-const Task = r => require.ensure([], () => r(require('@/page/Task')), 'Task');
-const JobRunningInfo = r => require.ensure([], () => r(require('@/page/JobRunningInfo')), 'JobRunningInfo');
+const Job = r => require.ensure([], () => r(require('@/page/Job')), 'Job');
+const JobRecord = r => require.ensure([], () => r(require('@/page/JobRecord')), 'JobRecord');
 
 
 
@@ -32,23 +32,23 @@ export default new Router({
         meta: ['用户管理', '角色列表'],
       }, {
         path: 'userChart',
-        component: Task,
+        component: Role,
         meta: ['图表预览', '用户分布'],
       }, {
-        path: 'task',
-        component: Task,
+        path: 'job',
+        component: Job,
         meta: ['计划任务', '任务明细'],
       }, {
-        path: 'jobHistory',
-        component: JobRunningInfo,
+        path: 'jobRecord',
+        component: JobRecord,
         meta: ['计划任务', '执行记录'],
       }, {
         path: 'setting',
-        component: Task,
+        component: Job,
         meta: ['系统设置', '系统配置'],
       }, {
         path: 'logout',
-        component: Task,
+        component: Login,
         meta: ['系统设置', '退出登录'],
       }]
     },

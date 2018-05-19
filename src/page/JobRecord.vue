@@ -47,7 +47,7 @@
     },
     methods: {
       initData() {
-        this.$store.dispatch('getJobRunningInfo', {}).then((data) => {
+        this.$store.dispatch('getJobRecord', {}).then((data) => {
           this.tableData = data.rows;
           this.count = data.rows.length;
         }).catch((error) => {
@@ -63,17 +63,6 @@
         this.offset = (val - 1) * this.limit;
         this.getUsers()
       },
-      todo(){
-        console.log(1111111)
-
-        this.$store.dispatch('addJob', {jobGroup:'GROUP1', jobName:'任务2', jobClassName:'com.hand.sxy.job.example.HelloJob', cronExpression: '0/5 * * * * ?'}).then((data) => {
-          // this.tableData = data.rows;
-          // this.count = data.rows.length;
-        }).catch((error) => {
-            console.log('获取数据失败', error);
-            this.loading = false
-        });
-      }
     },
 
   }

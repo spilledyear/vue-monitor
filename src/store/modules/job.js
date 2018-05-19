@@ -1,4 +1,4 @@
-import {getJobList, addJob, getJobRunningInfo } from '@/api/axios'
+import {getJobList, addJob, getJobRecord } from '@/api/axios'
 
 const job = {
   state: {
@@ -24,9 +24,9 @@ const job = {
       })
     },
 
-    getJobRunningInfo({ commit }, params) {
+    getJobRecord({ commit }, params) {
       return new Promise((resolve, reject) => {
-        getJobRunningInfo(params).then(data => {
+        getJobRecord(params).then(data => {
           resolve(data)
         }).catch(error => {
           reject(error)
