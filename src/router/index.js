@@ -6,7 +6,8 @@ Vue.use(Router)
 const Login = r => require.ensure([], () => r(require('@/page/Login')), 'Login');
 const Manage = r => require.ensure([], () => r(require('@/page/Manage')), 'Manage');
 const Home = r => require.ensure([], () => r(require('@/page/Home')), 'Home');
-const UserList = r => require.ensure([], () => r(require('@/page/UserList')), 'Home');
+const UserList = r => require.ensure([], () => r(require('@/page/UserList')), 'UserList');
+const Role = r => require.ensure([], () => r(require('@/page/Role')), 'Role');
 const Task = r => require.ensure([], () => r(require('@/page/Task')), 'Task');
 
 
@@ -25,8 +26,8 @@ export default new Router({
         component: UserList,
         meta: ['用户管理', '用户列表'],
       }, {
-        path: 'roleList',
-        component: Task,
+        path: 'role',
+        component: Role,
         meta: ['用户管理', '角色列表'],
       }, {
         path: 'userChart',

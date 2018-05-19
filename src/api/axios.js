@@ -29,7 +29,6 @@ export function logout() {
  * 查询用户信息
  * @param {*} data 
  */
-
 export function getUserList(data) {
   return axios({
     url: '/api/user/',
@@ -39,10 +38,22 @@ export function getUserList(data) {
 }
 
 /**
+ * 查询角色信息
+ * @param {*} data 
+ */
+export function getRoleList(data) {
+  return axios({
+    url: '/api/role/query',
+    method: 'post',
+    data
+  });
+}
+
+
+/**
  * 查询用户信息
  * @param {*} data 
  */
-
 export function addJob(data) {
   return axios({
     url: '/job/addjob/',
@@ -56,7 +67,6 @@ export function addJob(data) {
  * 获取Job信息
  * @param {*} data 
  */
-
 export function getJobList(data) {
   return axios({
     url: '/api/job/query',

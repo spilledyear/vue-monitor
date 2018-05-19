@@ -1,4 +1,4 @@
-import { login, logout, getUserList, addJob, getJobList} from '@/api/axios'
+import * as service from '@/api/axios'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 
 const user = {
@@ -28,7 +28,7 @@ const user = {
      */
     login({ commit }, userInfo) {
       return new Promise((resolve, reject) => {
-        login(userInfo).then(data => {
+        service.login(userInfo).then(data => {
           if(data.success){
             commit('SET_USER_INFO',data);
             setToken(data.token);
@@ -47,7 +47,7 @@ const user = {
      */
     logout({ commit, state }) {
       return new Promise((resolve, reject) => {
-        logout(state.token).then(() => {
+        service.logout(state.token).then(() => {
           commit('SET_USER_INFO', '')
           removeToken()
           resolve()
@@ -60,7 +60,18 @@ const user = {
     // 获取用户信息
     getUserList({ commit }, userInfo) {
       return new Promise((resolve, reject) => {
-        getUserList(userInfo).then(data => {
+        service.getUserList(userInfo).then(data => {
+          resolve(data)
+        }).catch(error => {
+          reject(error)
+        })
+      })
+    },
+
+    // 获取角色信息
+    getRoleList({ commit }, userInfo) {
+      return new Promise((resolve, reject) => {
+        service.getRoleList(userInfo).then(data => {
           resolve(data)
         }).catch(error => {
           reject(error)

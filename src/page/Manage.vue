@@ -8,7 +8,7 @@
               <i class="el-icon-document"></i>用户管理
             </template>
             <el-menu-item index="userList">用户查询</el-menu-item>
-            <el-menu-item index="roleList">角色查询</el-menu-item>
+            <el-menu-item index="role">角色查询</el-menu-item>
           </el-submenu>
           <el-submenu index="4">
             <template slot="title">
