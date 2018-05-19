@@ -1,4 +1,4 @@
-import { login, logout, getUserList, addJob} from '@/api/axios'
+import { login, logout, getUserList, addJob, getJobList} from '@/api/axios'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 
 const user = {
@@ -61,6 +61,17 @@ const user = {
     getUserList({ commit }, userInfo) {
       return new Promise((resolve, reject) => {
         getUserList(userInfo).then(data => {
+          resolve(data)
+        }).catch(error => {
+          reject(error)
+        })
+      })
+    },
+
+    // 获取Job信息
+    getJobList({ commit }, params) {
+      return new Promise((resolve, reject) => {
+        getJobList(params).then(data => {
           resolve(data)
         }).catch(error => {
           reject(error)

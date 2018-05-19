@@ -51,3 +51,17 @@ export function addJob(data) {
   });
 }
 
+
+/**
+ * 获取Job信息
+ * @param {*} data 
+ */
+
+export function getJobList(data) {
+  return axios({
+    url: '/api/job/query',
+    method: 'post',
+    data
+  });
+}
+

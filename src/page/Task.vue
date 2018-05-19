@@ -5,11 +5,12 @@
       <el-button type="primary" plain @click="todo">主要按钮</el-button>
       <el-table :data="tableData" highlight-current-row style="width: 100%">
         <el-table-column type="index" label="标题"/>
-        <el-table-column property="jobName" label="任务名称" style="width: 30%"/>
-        <el-table-column property="status" label="任务状态" style="width: 30%"/>
-        <el-table-column property="jobGroup" label="任务组名" style="width: 30%"/>
-        <el-table-column property="jobClassName" label="任务类名" style="width: 30%" />
-        <el-table-column property="description" label="任务描述" style="width: 10%" />
+        <el-table-column property="jobName" label="任务名称" style="width: 10%"/>
+        <el-table-column property="jobGroup" label="任务组名" style="width: 10%"/>
+        <el-table-column property="jobStatus" label="任务状态" style="width: 10%"/>
+        <el-table-column property="cronExpression" label="Corn表达式" style="width: 10%"/>
+        <el-table-column property="description" label="任务描述" style="width:10%" />
+        <el-table-column property="jobClassName" label="任务类名" style="width: 50%" />
       </el-table>
       <div class="Pagination" style="text-align: left;margin-top: 10px;">
         <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="currentPage" :page-size="20"
@@ -53,9 +54,9 @@
     },
     methods: {
       initData() {
-        this.$store.dispatch('getUserList', {}).then((data) => {
-          // this.tableData = data.rows;
-          // this.count = data.rows.length;
+        this.$store.dispatch('getJobList', {}).then((data) => {
+          this.tableData = data.rows;
+          this.count = data.rows.length;
         }).catch((error) => {
             console.log('获取数据失败', error);
             this.loading = false
@@ -72,7 +73,7 @@
       todo(){
         console.log(1111111)
 
-        this.$store.dispatch('addJob', {jobGroup:'GROUP1', jobName:'任务1', jobClassName:'com.hand.sxy.job.example.HelloJob', cronExpression: '0/5 * * * * ?'}).then((data) => {
+        this.$store.dispatch('addJob', {jobGroup:'GROUP1', jobName:'任务2', jobClassName:'com.hand.sxy.job.example.HelloJob', cronExpression: '0/5 * * * * ?'}).then((data) => {
           // this.tableData = data.rows;
           // this.count = data.rows.length;
         }).catch((error) => {
