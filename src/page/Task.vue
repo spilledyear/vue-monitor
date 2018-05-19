@@ -2,7 +2,7 @@
   <div class="fillcontain">
     <Header></Header>
     <div class="table_container">
-      <el-button type="primary" plain @click="todo">主要按钮</el-button>
+      <el-button type="primary" plain @click="todo">新建</el-button>
       <el-table :data="tableData" highlight-current-row style="width: 100%">
         <el-table-column type="index" label="标题"/>
         <el-table-column property="jobName" label="任务名称" style="width: 10%"/>
