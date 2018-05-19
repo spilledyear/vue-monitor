@@ -23,11 +23,31 @@ export default new Router({
       }, {
         path: 'userList',
         component: UserList,
-        meta: ['数据管理', '用户列表'],
+        meta: ['用户管理', '用户列表'],
+      }, {
+        path: 'roleList',
+        component: Task,
+        meta: ['用户管理', '角色列表'],
+      }, {
+        path: 'userChart',
+        component: Task,
+        meta: ['图表预览', '用户分布'],
       }, {
         path: 'task',
         component: Task,
-        meta: ['数据管理', '任务明细'],
+        meta: ['计划任务', '任务明细'],
+      }, {
+        path: 'taskHistory',
+        component: Task,
+        meta: ['计划任务', '执行记录'],
+      }, {
+        path: 'setting',
+        component: Task,
+        meta: ['系统设置', '系统配置'],
+      }, {
+        path: 'logout',
+        component: Task,
+        meta: ['系统设置', '退出登录'],
       }]
     },
 
