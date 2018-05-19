@@ -8,7 +8,7 @@
               <i class="el-icon-document"></i>数据管理
             </template>
             <el-menu-item index="userList">用户列表</el-menu-item>
-            <el-menu-item index="shopList">商家列表</el-menu-item>
+            <el-menu-item index="task">商家列表</el-menu-item>
             <el-menu-item index="foodList">食品列表</el-menu-item>
           </el-submenu>
           <el-submenu index="4">

@@ -1,4 +1,4 @@
-import { login, logout, getUserList} from '@/api/axios'
+import { login, logout, getUserList, addJob} from '@/api/axios'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 
 const user = {
@@ -67,6 +67,18 @@ const user = {
         })
       })
     },
+    
+    addJob({ commit }, data){
+      console.log(data)
+      return new Promise((resolve, reject) => {
+        addJob(data).then(data => {
+          resolve(data)
+        }).catch(error => {
+          console.log(error)
+          reject(error)
+        })
+      })
+    }
   }
 }
 

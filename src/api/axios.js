@@ -38,3 +38,16 @@ export function getUserList(data) {
   });
 }
 
+/**
+ * 查询用户信息
+ * @param {*} data 
+ */
+
+export function addJob(data) {
+  return axios({
+    url: '/job/addjob/',
+    method: 'get',
+    params: data
+  });
+}
+
