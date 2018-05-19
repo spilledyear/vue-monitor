@@ -7,9 +7,9 @@
         <el-table-column property="jobName" label="任务名称" style="width: 10%"/>
         <el-table-column property="jobGroup" label="任务组名" style="width: 10%"/>
         <el-table-column property="jobStatus" label="任务状态" style="width: 10%"/>
-        <el-table-column property="cronExpression" label="Corn表达式" style="width: 10%"/>
-        <el-table-column property="description" label="任务描述" style="width:10%" />
-        <el-table-column property="jobClassName" label="任务类名" style="width: 50%" />
+        <el-table-column property="previousFireTime" label="上次执行时间" style="width: 10%"/>
+        <el-table-column property="nextFireTime" label="下次执行时间" style="width:10%" />
+        <el-table-column property="ipAddress" label="IP地址" style="width: 50%" />
       </el-table>
       <div class="Pagination" style="text-align: left;margin-top: 10px;">
         <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="currentPage" :page-size="20"
@@ -27,10 +27,11 @@
       return {
         tableData: [{
           jobName: '任务1',
-          status: 'ACTIVE',
-          jobGroup: 'GROUP1',
-          jobClassName: 'com.hand.sxy.job.example.HelloJob',
-          description: '任务1',
+          jobGroup: '任务1',
+          jobStatus: 'ACTIVE',
+          previousFireTime: '',
+          nextFireTime: '',
+          ipAddress: '127.0.0.1',
         }],
         currentRow: 0,
         offset: 0,
